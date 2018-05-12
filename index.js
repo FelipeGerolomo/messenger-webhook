@@ -85,22 +85,20 @@ function handleMessage(sender_psid, received_message) {
 
         // Create the payload for a basic text message
         response = {
-            "text": `You sent the message: "${received_message.text}". Now send me an image!`
+            "text": `Boa Noite é o caralho!!`
         }
     }
 
-    // Sends the response message
     callSendAPI(sender_psid, response);
 }
 
-// Handles messaging_postbacks events
+
 function handlePostback(sender_psid, received_postback) {
 
 }
 
-// Sends response messages via the Send API
+
 function callSendAPI(sender_psid, response) {
-    // Construct the message body
     let request_body = {
         "recipient": {
             "id": sender_psid
@@ -108,7 +106,6 @@ function callSendAPI(sender_psid, response) {
         "message": response
     }
 
-    // Send the HTTP request to the Messenger Platform
   request({
     "uri": "https://graph.facebook.com/v2.6/me/messages",
     "qs": { "access_token": "EAAFbvdkTpjcBAAdDh6iTviG5BccPuZCyjQnTiRKGDtWP8IIcawZC02IiKzBBaMllkVjmhbsBQuPEDpq3Pmyxypl7zKZACN3i4kVXTsXQIBiLVMi1EiqR33jicJdl8vKjGtmt9hTYz7ZAepElNJZAAz075ZBw93Uol6oEZCG3W3ZCHKQlp6yP7IqF" },
