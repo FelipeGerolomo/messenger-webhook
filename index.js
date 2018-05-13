@@ -88,26 +88,17 @@ function handleMessage(sender_psid, received_message) {
             "attachment": {
                 "type": "template",
                 "payload": {
-                    "template_type": "list",
-                    "top_element_style": "compact",
-                    "elements": [
-                        {
-                            "title": "Classic White T-Shirt",
-                            "subtitle": "See all our colors",
-                            "default_action": {
-                                "type": "web_url",
-                                "url": "https://www.google.com",
-                                "messenger_extensions": true,
-                                "webview_height_ratio": "tall"
-                            }
-                        },
-                    ],
+                    "template_type": "button",
+                    "text": "What do you want to do next?",
                     "buttons": [
                         {
-                            "title": "View More",
-                            "type": "postback",
-                            "payload": "payload"
-                        }
+                            "type": "web_url",
+                            "url": "https://www.messenger.com",
+                            "title": "Visit Messenger"
+                        },
+                        {
+                        },
+
                     ]
                 }
             }
