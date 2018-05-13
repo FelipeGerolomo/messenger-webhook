@@ -97,7 +97,7 @@ function handleMessage(sender_psid, received_message) {
                             "default_action": {
                                 "type": "web_url",
                                 "url": "https://www.google.com",
-                                "messenger_extensions": false,
+                                "messenger_extensions": true,
                                 "webview_height_ratio": "tall"
                             }
                         },
