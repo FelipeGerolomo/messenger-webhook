@@ -88,26 +88,31 @@ function handleMessage(sender_psid, received_message) {
             "attachment": {
                 "type": "template",
                 "payload": {
-                    "template_type": "generic",
-                    "elements": [{
-                        "title": "Is this the right picture?",
-                        "subtitle": "Tap a button to answer.",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Yes!",
-                                "payload": "yes",
-                            },
-                            {
-                                "type": "postback",
-                                "title": "No!",
-                                "payload": "no",
+                    "template_type": "list",
+                    "top_element_style": "compact",
+                    "elements": [
+                        {
+                            "title": "Classic White T-Shirt",
+                            "subtitle": "See all our colors",
+                            "default_action": {
+                                "type": "web_url",
+                                "url": "https://www.google.com",
+                                "messenger_extensions": false,
+                                "webview_height_ratio": "tall"
                             }
-                        ],
-                    }]
+                        },
+                    ],
+                    "buttons": [
+                        {
+                            "title": "View More",
+                            "type": "postback",
+                            "payload": "payload"
+                        }
+                    ]
                 }
             }
         }
+
     } else if (received_message.attachments) {
         // Get the URL of the message attachment
         let attachment_url = received_message.attachments[0].payload.url;
