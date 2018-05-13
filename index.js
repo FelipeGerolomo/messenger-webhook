@@ -84,6 +84,7 @@ function handleMessage(sender_psid, received_message) {
     if (received_message.text) {
         // Create the payload for a basic text message, which
         // will be added to the body of our request to the Send API
+        console.log("Mensagem de texto");
         response = {
             "payload": {
                 "template_type": "list",
@@ -116,30 +117,36 @@ function handleMessage(sender_psid, received_message) {
         }
     } else if (received_message.attachments) {
         // Get the URL of the message attachment
+        console.log("Mensagem de anexo");
         let attachment_url = received_message.attachments[0].payload.url;
         response = {
-            "attachment": {
-                "type": "template",
-                "payload": {
-                    "template_type": "generic",
-                    "elements": [{
-                        "title": "Is this the right picture?",
-                        "subtitle": "Tap a button to answer.",
-                        "image_url": attachment_url,
+            "payload": {
+                "template_type": "list",
+                "top_element_style": "<LARGE | COMPACT>",
+                "elements": [
+                    {
+                        "title": "Classic T-Shirt Collection",
+                        "subtitle": "See all our colors",
+                        "image_url": "https://peterssendreceiveapp.ngrok.io/img/collection.png",
                         "buttons": [
                             {
-                                "type": "postback",
-                                "title": "Yes!",
-                                "payload": "yes",
-                            },
-                            {
-                                "type": "postback",
-                                "title": "No!",
-                                "payload": "no",
+                                "title": "View",
+                                "type": "web_url",
+                                "url": "https://peterssendreceiveapp.ngrok.io/collection",
+                                "messenger_extensions": true,
+                                "webview_height_ratio": "tall",
+                                "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
                             }
-                        ],
-                    }]
-                }
+                        ]
+                    },
+                ],
+                "buttons": [
+                    {
+                        "title": "View More",
+                        "type": "postback",
+                        "payload": "payload"
+                    }
+                ]
             }
         }
     }
