@@ -85,7 +85,25 @@ function handleMessage(sender_psid, received_message) {
         // Create the payload for a basic text message, which
         // will be added to the body of our request to the Send API
         response = {
-            "text": `You sent the message: "${received_message.text}". Now send me an image!`
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type": "list",
+                    "top_element_style": "compact",
+                    "elements": [
+                        {
+                            "title": "FELIPE",
+                            "subtitle": "GEROLOMO",
+                            "default_action": {
+                                "type": "web_url",
+                                "url": "https://www.google.com.br",
+                                "messenger_extensions": true,
+                                "webview_height_ratio": "tall"
+                            }
+                        },
+                    ]
+                }
+            }
         }
 
     } else if (received_message.attachments) {
