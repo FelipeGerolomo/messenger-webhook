@@ -196,5 +196,5 @@ function callSendAPI(sender_psid, response) {
 }
 
 app.get('/index', (req, res, next) => {
-    res.sendFile('public/index.html');
+    res.sendFile('public/index.html', {root: __dirname});
 });
