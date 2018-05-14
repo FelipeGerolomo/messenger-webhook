@@ -106,7 +106,7 @@ function handleMessage(sender_psid, received_message) {
                             "buttons": [
                                 {
                                     "type": "web_url",
-                                    "url": "https://www.messenger.com",
+                                    "url": "https://www.google.com",
                                     "title": "Visit Messenger"
                                 },
 
