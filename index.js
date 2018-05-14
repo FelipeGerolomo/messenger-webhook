@@ -106,7 +106,7 @@ function handleMessage(sender_psid, received_message) {
                             "buttons": [
                                 {
                                     "type": "web_url",
-                                    "url": "https://www.google.com",
+                                    "url": "https://mighty-ridge-65223.herokuapp.com/index",
                                     "title": "Visit Google",
                                     "webview_height_ratio": "tall",
                                     "messenger_extensions": true
