@@ -94,12 +94,10 @@ function handleMessage(sender_psid, received_message) {
                         {
                             "title": "FELIPE",
                             "subtitle": "GEROLOMO",
-                            "default_action": {
-                                "type": "web_url",
-                                "url": "https://www.google.com.br",
-                                "messenger_extensions": true,
-                                "webview_height_ratio": "tall"
-                            }
+                        },
+                        {
+                            "title": "VICTOR",
+                            "subtitle": "GEROLOMO",
                         },
                     ]
                 }
@@ -164,6 +162,8 @@ function callSendAPI(sender_psid, response) {
         },
         "message": response
     }
+
+    console.log("MEnsagem: ",request_body);
 
     // Send the HTTP request to the Messenger Platform
     request({
