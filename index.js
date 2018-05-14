@@ -108,7 +108,7 @@ function handleMessage(sender_psid, received_message) {
                                     "title": "View",
                                     "type": "web_url",
                                     "url": "https://www.google.com.br",
-                                    "messenger_extensions": true,
+                                    "messenger_extensions": false,
                                     "webview_height_ratio": "tall",
                                     "fallback_url": "https://www.google.com.br"
                                 }
