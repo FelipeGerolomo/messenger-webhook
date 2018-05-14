@@ -99,6 +99,21 @@ function handleMessage(sender_psid, received_message) {
                             "title": "VICTOR",
                             "subtitle": "GEROLOMO",
                         },
+                        {
+                            "title": "TESTE",
+                            "subtitle": "WEBVIEW",
+                            "image_url": "http://pt.naturewallpaperfree.com/mobile/gatos/natureza-papel-de-parede-320x240-4047-f85299e9.jpg",
+                            "buttons": [
+                                {
+                                    "title": "View",
+                                    "type": "web_url",
+                                    "url": "https://www.google.com.br",
+                                    "messenger_extensions": true,
+                                    "webview_height_ratio": "tall",
+                                    "fallback_url": "https://www.google.com.br"
+                                }
+                            ]
+                        },
                     ]
                 }
             }
@@ -163,7 +178,7 @@ function callSendAPI(sender_psid, response) {
         "message": response
     }
 
-    console.log("MEnsagem: ",request_body);
+    console.log("MEnsagem: ", request_body);
 
     // Send the HTTP request to the Messenger Platform
     request({
